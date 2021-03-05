@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+html {
+  --dark-cyan: hsl(185, 75%, 39%);
+  --very-dark-desaturated-blue: hsl(229, 23%, 23%);
+  --dark-grayish-blue: hsl(227, 10%, 46%);
+  --dark-gray: hsl(0, 0%, 59%);
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+#main {
+  width: 100%;
+  height: 100%;
+  color: var(--very-dark-desaturated-blue);
+  background: var(--dark-cyan);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: -2;
+  overflow: hidden;
+}
+
+
+.bgPattern {
+  --bg-width: 100vw;
+  --bg-offset-x: calc((var(--bg-width) * 40 /100) * -1);
+  --bg-offset-y: calc((var(--bg-width) * 70 /100) * -1);
+  width: var(--bg-width);
+  position: absolute;
+  z-index: -1;
+}
+
+.bgPattern.top {
+  top: var(--bg-offset-y);
+  left: var(--bg-offset-x);
+}
+
+.bgPattern.bottom {
+  bottom: var(--bg-offset-y);
+  right: var(--bg-offset-x);
+}
+
+.light {
+  color: var(--dark-grayish-blue);
+  font-weight: 400;
+}
+
+.card {
+  width: 300px;
+  flex-shrink: 0;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0px 5px 50px 1px rgba(75, 75, 75, 0.438);
+}
+@media only screen and (min-width: 375px) {
+  .card {
+    width: 350px;
+  }
+}
+.cardUp {
+  flex: 0 0 35%;
+  background: url("./images/bg-pattern-card.svg");
+}
+
+.cardDown {
+  flex: 0 0 65%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.imgCircle {
+  --img-dim: 96px;
+  position: absolute;
+  width: var(--img-dim);
+  height: var(--img-dim);
+  left: calc((300px/2) - (var(--img-dim)/2));
+  top: calc(var(--img-dim) / 2 * -1);
+  border-radius: 50%;
+  border: 5px solid #fff;
+}
+@media only screen and (min-width: 375px) {
+  .imgCircle {
+    left: calc((350px/2) - (var(--img-dim)/2));
+  }
+}
+
+.userName {
+  flex: 0 0 60%;
+}
+
+.userName div:nth-of-type(1) {
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+.userName div:nth-of-type(2) {
+  text-align: center;
+  font-size: .8rem;
+}
+
+.userName div:nth-of-type(1) > span:nth-of-type(1) {
+  margin-right: 10px;
+}
+
+.stats {
+  flex: 0 0 35%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0 20px;
+  border-top: 1px solid rgb(231, 231, 231);
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail > span:nth-of-type(1) {
+  margin-bottom: 5px;
+}
+
+.detail > span:nth-of-type(2) {
+  font-size: .7rem;
+}
+
+.bold {
+  font-weight: bold;
+}
